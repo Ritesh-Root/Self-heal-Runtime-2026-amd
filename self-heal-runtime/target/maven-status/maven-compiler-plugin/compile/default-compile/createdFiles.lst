@@ -1,0 +1,16 @@
+com\selfheal\ProcessRunner$RunResult.class
+com\selfheal\ASTGrafter.class
+com\selfheal\ErrorDiagnostics.class
+com\selfheal\AIRepairer.class
+com\selfheal\ASTSurgeon.class
+com\selfheal\ASTChunker.class
+com\selfheal\CrashAnalyzer.class
+com\selfheal\ASTChunker$MethodChunk.class
+com\selfheal\GlobalState.class
+com\selfheal\ErrorDiagnostics$CrashInfo.class
+com\selfheal\CrashAnalyzer$CrashData.class
+com\selfheal\GeminiService.class
+com\selfheal\ProcessRunner.class
+com\selfheal\Verifier.class
+com\selfheal\SelfHeal.class
+com\selfheal\Watchdog.class
