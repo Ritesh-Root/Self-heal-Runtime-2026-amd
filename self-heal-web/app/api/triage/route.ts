@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { spawn } from "child_process";
 import path from "path";
 
+const TRIAGE_TIMEOUT_MS = 60_000;
+
 // Only allow absolute paths to .java files; reject path traversal attempts.
 function isValidJavaPath(filePath: string): boolean {
   if (typeof filePath !== "string") return false;
@@ -102,7 +104,7 @@ export async function POST(req: NextRequest) {
       child.stderr.destroy();
       child.kill("SIGTERM");
       done();
-    }, 60000);
+    }, TRIAGE_TIMEOUT_MS);
   });
 
   return NextResponse.json({ logs, originalCode, fixedCode, astContext, aiRationale, status });

@@ -336,7 +336,7 @@ const STAGE_INDEX: Record<Stage, number> = {
 export default function Dashboard() {
   const [stage, setStage] = useState<Stage>("IDLE");
   const [filePath, setFilePath] = useState(
-    "/path/to/TransactionProcessor.java"
+    "/home/user/TransactionProcessor.java"
   );
   const [apiKey, setApiKey] = useState("");
   const [logs, setLogs] = useState<LogEntry[]>([]);
@@ -456,7 +456,7 @@ export default function Dashboard() {
               id: Date.now(),
               file: filePath.split("/").pop() || filePath,
               ts: new Date().toLocaleTimeString(),
-              linesChanged: 4,
+              linesChanged: linesAdded,
               status: data.status === "ERROR" ? "failed" : "healed",
             },
             ...prev.slice(0, 9),
@@ -488,7 +488,7 @@ export default function Dashboard() {
               id: Date.now(),
               file: filePath.split("/").pop() || filePath,
               ts: new Date().toLocaleTimeString(),
-              linesChanged: 4,
+              linesChanged: demoLinesAdded,
               status: "healed",
             },
             ...prev.slice(0, 9),
